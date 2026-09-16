@@ -1,0 +1,61 @@
+{
+  "name": "types-gltf",
+  "version": "1.0.0",
+  "description": "TypeScript declarations for the glTF 2.0 specification and every Complete registry extension, generated from the Khronos JSON Schema.",
+  "keywords": [
+    "gltf",
+    "glb",
+    "types",
+    "typescript",
+    "json-schema",
+    "khronos",
+    "3d"
+  ],
+  "homepage": "https://github.com/dmnsgn/types-gltf",
+  "bugs": "https://github.com/dmnsgn/types-gltf/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmnsgn/types-gltf.git"
+  },
+  "funding": [
+    {
+      "type": "individual",
+      "url": "https://paypal.me/dmnsgn"
+    },
+    {
+      "type": "individual",
+      "url": "https://commerce.coinbase.com/checkout/56cbdf28-e323-48d8-9c98-7019e72c97f3"
+    }
+  ],
+  "license": "MIT",
+  "author": "Damien Seguin (https://github.com/dmnsgn)",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./extensions": {
+      "types": "./types/extensions/index.d.ts",
+      "default": "./lib/extensions/index.js"
+    },
+    "./extensions/*": {
+      "types": "./types/extensions/*.d.ts",
+      "default": "./lib/extensions/*.js"
+    }
+  },
+  "main": "./lib/index.js",
+  "types": "./types/index.d.ts",
+  "scripts": {
+    "generate": "node scripts/generate.js"
+  },
+  "devDependencies": {
+    "json-schema-to-typescript": "^16.0.0",
+    "prettier": "^3.9.7"
+  },
+  "engines": {
+    "node": ">=22.0.0",
+    "npm": ">=10.5.1"
+  }
+}
