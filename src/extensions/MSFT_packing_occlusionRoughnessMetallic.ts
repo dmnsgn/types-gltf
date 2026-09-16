@@ -5,34 +5,23 @@
 import type { GlTFId, GlTFProperty } from "../specification.js";
 
 /**
- * glTF extension the specifies a packing of occlusion, roughness and metallic in a single texture and a two channel normal map.
+ * GlTF extension the specifies a packing of occlusion, roughness and metallic
+ * in a single texture and a two channel normal map.
  */
 export type GlTF = GlTFProperty & {
-  /**
-   * A texture with packing Occlusion (R), Roughness (G), Metallic (B).
-   */
+  /** A texture with packing Occlusion (R), Roughness (G), Metallic (B). */
   occlusionRoughnessMetallicTexture?: {
-    /**
-     * The index of the texture.
-     */
+    /** The index of the texture. */
     index?: GlTFId;
   };
-  /**
-   * A texture with packing Roughness (R), Metallic (G), Occlusion (B).
-   */
+  /** A texture with packing Roughness (R), Metallic (G), Occlusion (B). */
   roughnessMetallicOcclusionTexture?: {
-    /**
-     * The index of the texture.
-     */
+    /** The index of the texture. */
     index?: GlTFId;
   };
-  /**
-   * A texture which contains two channel (RG) normal map.
-   */
+  /** A texture which contains two channel (RG) normal map. */
   normalTexture?: {
-    /**
-     * The index of the texture.
-     */
+    /** The index of the texture. */
     index?: GlTFId;
   };
 };

@@ -5,9 +5,7 @@
 //   Material                 material.ADOBE_materials_clearcoat_tint.schema.json
 import type { GlTFProperty, TextureInfo } from "../specification.js";
 
-/**
- * glTF extension that defines the colour tint of the clearcoat.
- */
+/** GlTF extension that defines the colour tint of the clearcoat. */
 export type Material = GlTFProperty & {
   /**
    * The transmittance of the clearcoat layer.
@@ -16,8 +14,6 @@ export type Material = GlTFProperty & {
    * @maxItems 3
    */
   clearcoatTintFactor?: [number, number, number];
-  /**
-   * The clearcoat layer tint texture.
-   */
+  /** The clearcoat layer tint texture. */
   clearcoatTintTexture?: TextureInfo;
 };

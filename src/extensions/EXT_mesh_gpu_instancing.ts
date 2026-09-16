@@ -4,12 +4,17 @@
 //   GlTF                     glTF.EXT_mesh_gpu_instancing.schema.json
 import type { GlTFId, GlTFProperty } from "../specification.js";
 
-/**
- * glTF extension defines instance attributes for a node with a mesh.
- */
+/** GlTF extension defines instance attributes for a node with a mesh. */
 export type GlTF = GlTFProperty & {
   /**
-   * A dictionary object, where each key corresponds to instance attribute and each value is the index of the accessor containing attribute's data. Attributes TRANSLATION, ROTATION, SCALE define instance transformation. For "TRANSLATION" the values are FLOAT_VEC3's specifying translation along the x, y, and z axes. For "ROTATION" the values are VEC4's specifying rotation as a quaternion in the order (x, y, z, w), where w is the scalar, with component type `FLOAT` or normalized integer. For "SCALE" the values are FLOAT_VEC3's specifying scaling factors along the x, y, and z axes.
+   * A dictionary object, where each key corresponds to instance attribute and
+   * each value is the index of the accessor containing attribute's data.
+   * Attributes TRANSLATION, ROTATION, SCALE define instance transformation. For
+   * "TRANSLATION" the values are FLOAT_VEC3's specifying translation along the
+   * x, y, and z axes. For "ROTATION" the values are VEC4's specifying rotation
+   * as a quaternion in the order (x, y, z, w), where w is the scalar, with
+   * component type `FLOAT` or normalized integer. For "SCALE" the values are
+   * FLOAT_VEC3's specifying scaling factors along the x, y, and z axes.
    */
   attributes?: {
     [k: string]: GlTFId;

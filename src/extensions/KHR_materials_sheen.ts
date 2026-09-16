@@ -5,9 +5,7 @@
 //   Material                 material.KHR_materials_sheen.schema.json
 import type { GlTFProperty, TextureInfo } from "../specification.js";
 
-/**
- * glTF extension that defines the sheen material model.
- */
+/** GlTF extension that defines the sheen material model. */
 export type Material = GlTFProperty & {
   /**
    * Color of the sheen layer (in linear space).
@@ -16,16 +14,10 @@ export type Material = GlTFProperty & {
    * @maxItems 3
    */
   sheenColorFactor?: [number, number, number];
-  /**
-   * The sheen color (RGB) texture.
-   */
+  /** The sheen color (RGB) texture. */
   sheenColorTexture?: TextureInfo;
-  /**
-   * The sheen layer roughness.
-   */
+  /** The sheen layer roughness. */
   sheenRoughnessFactor?: number;
-  /**
-   * The sheen roughness (Alpha) texture.
-   */
+  /** The sheen roughness (Alpha) texture. */
   sheenRoughnessTexture?: TextureInfo;
 };

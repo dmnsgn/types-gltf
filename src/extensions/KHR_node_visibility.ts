@@ -4,12 +4,8 @@
 //   Node                     node.KHR_node_visibility.schema.json
 import type { GlTFProperty } from "../specification.js";
 
-/**
- * glTF extension that defines node's visibility.
- */
+/** GlTF extension that defines node's visibility. */
 export type Node = GlTFProperty & {
-  /**
-   * Specifies whether the node is visible.
-   */
+  /** Specifies whether the node is visible. */
   visible?: boolean;
 };

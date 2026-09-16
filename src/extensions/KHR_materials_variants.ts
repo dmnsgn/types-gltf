@@ -10,9 +10,7 @@ import type {
   GlTFProperty,
 } from "../specification.js";
 
-/**
- * glTF extension that defines a material variations for mesh primitives
- */
+/** GlTF extension that defines a material variations for mesh primitives */
 export type GlTF = GlTFProperty & {
   /**
    * @minItems 1
@@ -21,25 +19,17 @@ export type GlTF = GlTFProperty & {
    */
   variants: [
     GlTFChildOfRootProperty & {
-      /**
-       * The name of the material variant
-       */
+      /** The name of the material variant */
       name: string;
     } & {
-      /**
-       * The name of the material variant
-       */
+      /** The name of the material variant */
       name: string;
     },
     ...(GlTFChildOfRootProperty & {
-      /**
-       * The name of the material variant
-       */
+      /** The name of the material variant */
       name: string;
     } & {
-      /**
-       * The name of the material variant
-       */
+      /** The name of the material variant */
       name: string;
     })[],
   ];
@@ -59,13 +49,9 @@ export type MeshPrimitive = GlTFProperty & {
        * @minItems 1
        */
       variants: GlTFId[];
-      /**
-       * The material associated with the set of variants.
-       */
+      /** The material associated with the set of variants. */
       material: GlTFId;
-      /**
-       * The user-defined name of this variant material mapping.
-       */
+      /** The user-defined name of this variant material mapping. */
       name?: string;
     } & {
       /**
@@ -74,13 +60,9 @@ export type MeshPrimitive = GlTFProperty & {
        * @minItems 1
        */
       variants: GlTFId[];
-      /**
-       * The material associated with the set of variants.
-       */
+      /** The material associated with the set of variants. */
       material: GlTFId;
-      /**
-       * The user-defined name of this variant material mapping.
-       */
+      /** The user-defined name of this variant material mapping. */
       name?: string;
     },
     ...(GlTFProperty & {
@@ -90,13 +72,9 @@ export type MeshPrimitive = GlTFProperty & {
        * @minItems 1
        */
       variants: GlTFId[];
-      /**
-       * The material associated with the set of variants.
-       */
+      /** The material associated with the set of variants. */
       material: GlTFId;
-      /**
-       * The user-defined name of this variant material mapping.
-       */
+      /** The user-defined name of this variant material mapping. */
       name?: string;
     } & {
       /**
@@ -105,13 +83,9 @@ export type MeshPrimitive = GlTFProperty & {
        * @minItems 1
        */
       variants: GlTFId[];
-      /**
-       * The material associated with the set of variants.
-       */
+      /** The material associated with the set of variants. */
       material: GlTFId;
-      /**
-       * The user-defined name of this variant material mapping.
-       */
+      /** The user-defined name of this variant material mapping. */
       name?: string;
     })[],
   ];

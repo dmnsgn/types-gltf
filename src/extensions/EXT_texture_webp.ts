@@ -4,12 +4,8 @@
 //   GlTF                     glTF.EXT_texture_webp.schema.json
 import type { GlTFId, GlTFProperty } from "../specification.js";
 
-/**
- * glTF extension to specify textures using the WebP image format.
- */
+/** GlTF extension to specify textures using the WebP image format. */
 export type GlTF = GlTFProperty & {
-  /**
-   * The index of the WebP image.
-   */
+  /** The index of the WebP image. */
   source?: GlTFId;
 };

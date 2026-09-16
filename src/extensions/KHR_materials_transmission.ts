@@ -4,16 +4,14 @@
 //   Material                 material.KHR_materials_transmission.schema.json
 import type { GlTFProperty, TextureInfo } from "../specification.js";
 
-/**
- * glTF extension that defines the optical transmission of a material.
- */
+/** GlTF extension that defines the optical transmission of a material. */
 export type Material = GlTFProperty & {
-  /**
-   * The base percentage of light transmitted through the surface.
-   */
+  /** The base percentage of light transmitted through the surface. */
   transmissionFactor?: number;
   /**
-   * A texture that defines the transmission percentage of the surface, sampled from the R channel. These values are linear, and will be multiplied by transmissionFactor.
+   * A texture that defines the transmission percentage of the surface, sampled
+   * from the R channel. These values are linear, and will be multiplied by
+   * transmissionFactor.
    */
   transmissionTexture?: TextureInfo;
 };

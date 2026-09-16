@@ -4,7 +4,5 @@
 //   Material                 material.KHR_materials_unlit.schema.json
 import type { GlTFProperty } from "../specification.js";
 
-/**
- * glTF extension that defines the unlit material model.
- */
+/** GlTF extension that defines the unlit material model. */
 export type Material = GlTFProperty & {};

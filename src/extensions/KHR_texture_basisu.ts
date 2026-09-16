@@ -5,11 +5,13 @@
 import type { GlTFId, GlTFProperty } from "../specification.js";
 
 /**
- * glTF extension to specify textures using the KTX v2 images with Basis Universal supercompression.
+ * GlTF extension to specify textures using the KTX v2 images with Basis
+ * Universal supercompression.
  */
 export type Texture = GlTFProperty & {
   /**
-   * The index of the image which points to a KTX v2 resource with Basis Universal supercompression.
+   * The index of the image which points to a KTX v2 resource with Basis
+   * Universal supercompression.
    */
   source?: GlTFId;
 };

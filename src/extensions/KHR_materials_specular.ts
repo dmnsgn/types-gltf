@@ -5,17 +5,11 @@
 //   Material                 material.KHR_materials_specular.schema.json
 import type { GlTFProperty, TextureInfo } from "../specification.js";
 
-/**
- * glTF extension that defines the strength of the specular reflection.
- */
+/** GlTF extension that defines the strength of the specular reflection. */
 export type Material = GlTFProperty & {
-  /**
-   * The strength of the specular reflection.
-   */
+  /** The strength of the specular reflection. */
   specularFactor?: number;
-  /**
-   * A texture that defines the specular factor in the alpha channel.
-   */
+  /** A texture that defines the specular factor in the alpha channel. */
   specularTexture?: TextureInfo;
   /**
    * The F0 RGB color of the specular reflection.
@@ -24,8 +18,6 @@ export type Material = GlTFProperty & {
    * @maxItems 3
    */
   specularColorFactor?: [number, number, number];
-  /**
-   * A texture that defines the F0 color of the specular reflection.
-   */
+  /** A texture that defines the F0 color of the specular reflection. */
   specularColorTexture?: TextureInfo;
 };

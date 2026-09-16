@@ -4,12 +4,8 @@
 //   Node                     node.KHR_node_selectability.schema.json
 import type { GlTFProperty } from "../specification.js";
 
-/**
- * glTF extension that defines node's selectability.
- */
+/** GlTF extension that defines node's selectability. */
 export type Node = GlTFProperty & {
-  /**
-   * Specifies whether the node is selectable.
-   */
+  /** Specifies whether the node is selectable. */
   selectable?: boolean;
 };

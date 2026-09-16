@@ -4,20 +4,12 @@
 //   Material                 material.KHR_materials_anisotropy.schema.json
 import type { GlTFProperty, TextureInfo } from "../specification.js";
 
-/**
- * glTF extension that defines anisotropy.
- */
+/** GlTF extension that defines anisotropy. */
 export type Material = GlTFProperty & {
-  /**
-   * The anisotropy strength.
-   */
+  /** The anisotropy strength. */
   anisotropyStrength?: number;
-  /**
-   * The rotation of the anisotropy.
-   */
+  /** The rotation of the anisotropy. */
   anisotropyRotation?: number;
-  /**
-   * The anisotropy texture.
-   */
+  /** The anisotropy texture. */
   anisotropyTexture?: TextureInfo;
 };

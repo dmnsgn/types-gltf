@@ -6,12 +6,11 @@
 //   PrimitiveGroup           primitiveGroup.schema.json
 import type { GlTFId, GlTFProperty } from "../specification.js";
 
-/**
- * glTF extension enabling the use of primitive restart values in index buffers
- */
+/** GlTF extension enabling the use of primitive restart values in index buffers */
 export type EXTMeshPrimitiveRestart = GlTFProperty & {
   /**
-   * The list of groups of primitives that can be drawn using a single index buffer with primitive restart
+   * The list of groups of primitives that can be drawn using a single index
+   * buffer with primitive restart
    *
    * @minItems 1
    */
@@ -19,17 +18,17 @@ export type EXTMeshPrimitiveRestart = GlTFProperty & {
 };
 
 /**
- * A group of primitives that can be drawn together using a single index buffer containing restart values
+ * A group of primitives that can be drawn together using a single index buffer
+ * containing restart values
  */
 export type PrimitiveGroup = GlTFProperty & {
   /**
-   * The indices of the primitives that will be combined and drawn using a single set of indices
+   * The indices of the primitives that will be combined and drawn using a
+   * single set of indices
    *
    * @minItems 1
    */
   primitives: GlTFId[];
-  /**
-   * The index of the accessor that contains the vertex indices
-   */
+  /** The index of the accessor that contains the vertex indices */
   indices: GlTFId;
 };

@@ -4,12 +4,11 @@
 //   Material                 material.KHR_materials_dispersion.schema.json
 import type { GlTFProperty } from "../specification.js";
 
-/**
- * glTF extension that defines the strength of dispersion.
- */
+/** GlTF extension that defines the strength of dispersion. */
 export type Material = GlTFProperty & {
   /**
-   * This parameter defines dispersion in terms of the 20/Abbe number formulation.
+   * This parameter defines dispersion in terms of the 20/Abbe number
+   * formulation.
    */
   dispersion?: number;
 };

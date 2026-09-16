@@ -6,19 +6,19 @@
 import type { GlTFProperty } from "../specification.js";
 
 /**
- * glTF extension that enables shifting and scaling UV coordinates on a per-texture basis
+ * GlTF extension that enables shifting and scaling UV coordinates on a
+ * per-texture basis
  */
 export type TextureInfo = GlTFProperty & {
   /**
-   * The offset of the UV coordinate origin as a factor of the texture dimensions.
+   * The offset of the UV coordinate origin as a factor of the texture
+   * dimensions.
    *
    * @minItems 2
    * @maxItems 2
    */
   offset?: [number, number];
-  /**
-   * Rotate the UVs by this many radians counter-clockwise around the origin.
-   */
+  /** Rotate the UVs by this many radians counter-clockwise around the origin. */
   rotation?: number;
   /**
    * The scale factor applied to the components of the UV coordinates.
@@ -28,7 +28,8 @@ export type TextureInfo = GlTFProperty & {
    */
   scale?: [number, number];
   /**
-   * Overrides the textureInfo texCoord value if supplied, and if this extension is supported.
+   * Overrides the textureInfo texCoord value if supplied, and if this extension
+   * is supported.
    */
   texCoord?: number;
 };

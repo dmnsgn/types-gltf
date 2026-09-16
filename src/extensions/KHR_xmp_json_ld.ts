@@ -6,33 +6,24 @@
 //   GlTF                     glTF.KHR_xmp_json_ld.schema.json
 import type { GlTFId, GlTFProperty } from "../specification.js";
 
-/**
- * References an XMP packet listed in `KHR_xmp_json_ld glTF extension`
- */
+/** References an XMP packet listed in `KHR_xmp_json_ld glTF extension` */
 export type KHRXmpJsonLd = GlTFProperty & {
-  /**
-   * The id of the XMP packet referenced.
-   */
+  /** The id of the XMP packet referenced. */
   packet: GlTFId;
 };
 
-/**
- * Metadata about the glTF asset.
- */
+/** Metadata about the glTF asset. */
 export type GlTF = GlTFProperty & {
-  /**
-   * @minItems 1
-   */
+  /** @minItems 1 */
   packets: Packet[];
 };
 
 /**
- * Dictionary of XMP metadata properties. Property names take the form `xmp_namespace_name:property_name`
+ * Dictionary of XMP metadata properties. Property names take the form
+ * `xmp_namespace_name:property_name`
  */
 export interface Packet {
-  /**
-   * Dictionary mapping XMP namespace names to the URI where they are defined
-   */
+  /** Dictionary mapping XMP namespace names to the URI where they are defined */
   "@context": {
     [k: string]: string;
   };

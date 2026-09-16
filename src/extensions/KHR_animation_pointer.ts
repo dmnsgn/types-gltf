@@ -4,12 +4,11 @@
 //   AnimationChannelTarget   animation.channel.target.KHR_animation_pointer.schema.json
 import type { GlTFProperty } from "../specification.js";
 
-/**
- * Extension object providing the JSON Pointer to the animated property.
- */
+/** Extension object providing the JSON Pointer to the animated property. */
 export type AnimationChannelTarget = GlTFProperty & {
   /**
-   * JSON pointer to the animated property. The animation channel path value **MUST** be `pointer`.
+   * JSON pointer to the animated property. The animation channel path value
+   * **MUST** be `pointer`.
    */
   pointer: string;
 };

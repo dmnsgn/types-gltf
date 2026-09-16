@@ -11,19 +11,13 @@ import type {
   GlTFProperty,
 } from "../specification.js";
 
-/**
- * glTF extension that enables the use of IES light profiles.
- */
+/** GlTF extension that enables the use of IES light profiles. */
 export type GlTF = GlTFProperty & {
-  /**
-   * @minItems 1
-   */
+  /** @minItems 1 */
   lights: LightProfile[];
 };
 
-/**
- * An IES light profile.
- */
+/** An IES light profile. */
 export type LightProfile = GlTFChildOfRootProperty &
   (
     | {
@@ -33,16 +27,16 @@ export type LightProfile = GlTFChildOfRootProperty &
         [k: string]: unknown;
       }
   ) & {
-    /**
-     * The URI (or IRI) of the light profile.
-     */
+    /** The URI (or IRI) of the light profile. */
     uri?: string;
     /**
-     * The light profile's media type. This field **MUST** be defined when `bufferView` is defined.
+     * The light profile's media type. This field **MUST** be defined when
+     * `bufferView` is defined.
      */
     mimeType?: "application/x-ies-lm-63" | string;
     /**
-     * The index of the bufferView that contains the IES light profile. This field **MUST NOT** be defined when `uri` is defined.
+     * The index of the bufferView that contains the IES light profile. This
+     * field **MUST NOT** be defined when `uri` is defined.
      */
     bufferView?: GlTFId;
   } & (
@@ -55,13 +49,9 @@ export type LightProfile = GlTFChildOfRootProperty &
   );
 
 export type Node = GlTFProperty & {
-  /**
-   * The id of the light profile referenced by this node.
-   */
+  /** The id of the light profile referenced by this node. */
   light: GlTFId;
-  /**
-   * Non-negative factor to scale the light's intensity.
-   */
+  /** Non-negative factor to scale the light's intensity. */
   multiplier?: number;
   /**
    * RGB value for the light's color in linear space.

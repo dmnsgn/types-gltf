@@ -5,9 +5,7 @@
 //   GlTF                     glTF.MSFT_lod.schema.json
 import type { GlTFProperty } from "../specification.js";
 
-/**
- * glTF extension for specifying levels of detail (LOD).
- */
+/** GlTF extension for specifying levels of detail (LOD). */
 export type GlTF = GlTFProperty & {
   /**
    * Array containing the indices of progressively lower LOD nodes.

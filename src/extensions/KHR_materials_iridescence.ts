@@ -4,32 +4,18 @@
 //   Material                 material.KHR_materials_iridescence.schema.json
 import type { GlTFProperty, TextureInfo } from "../specification.js";
 
-/**
- * glTF extension that defines an iridescence effect.
- */
+/** GlTF extension that defines an iridescence effect. */
 export type Material = GlTFProperty & {
-  /**
-   * The iridescence intensity factor.
-   */
+  /** The iridescence intensity factor. */
   iridescenceFactor?: number;
-  /**
-   * The iridescence intensity texture.
-   */
+  /** The iridescence intensity texture. */
   iridescenceTexture?: TextureInfo;
-  /**
-   * The index of refraction of the dielectric thin-film layer.
-   */
+  /** The index of refraction of the dielectric thin-film layer. */
   iridescenceIor?: number;
-  /**
-   * The minimum thickness of the thin-film layer given in nanometers.
-   */
+  /** The minimum thickness of the thin-film layer given in nanometers. */
   iridescenceThicknessMinimum?: number;
-  /**
-   * The maximum thickness of the thin-film layer given in nanometers.
-   */
+  /** The maximum thickness of the thin-film layer given in nanometers. */
   iridescenceThicknessMaximum?: number;
-  /**
-   * The thickness texture of the thin-film layer.
-   */
+  /** The thickness texture of the thin-film layer. */
   iridescenceThicknessTexture?: TextureInfo;
 };

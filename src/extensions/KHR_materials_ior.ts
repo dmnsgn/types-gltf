@@ -4,12 +4,8 @@
 //   Material                 material.KHR_materials_ior.schema.json
 import type { GlTFProperty } from "../specification.js";
 
-/**
- * glTF extension that defines the index of refraction of a material.
- */
+/** GlTF extension that defines the index of refraction of a material. */
 export type Material = GlTFProperty & {
-  /**
-   * The index of refraction.
-   */
+  /** The index of refraction. */
   ior?: number;
 };

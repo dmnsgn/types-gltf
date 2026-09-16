@@ -13,15 +13,11 @@ import type {
 } from "../specification.js";
 
 export type GlTF = GlTFProperty & {
-  /**
-   * @minItems 1
-   */
+  /** @minItems 1 */
   lights: Light[];
 };
 
-/**
- * A directional, point, or spot light.
- */
+/** A directional, point, or spot light. */
 export type Light = GlTFChildOfRootProperty & {
   /**
    * Color of the light source.
@@ -31,34 +27,29 @@ export type Light = GlTFChildOfRootProperty & {
    */
   color?: [number, number, number];
   /**
-   * Intensity of the light source. `point` and `spot` lights use luminous intensity in candela (lm/sr) while `directional` lights use illuminance in lux (lm/m^2)
+   * Intensity of the light source. `point` and `spot` lights use luminous
+   * intensity in candela (lm/sr) while `directional` lights use illuminance in
+   * lux (lm/m^2)
    */
   intensity?: number;
   spot?: LightSpot;
-  /**
-   * Specifies the light type.
-   */
+  /** Specifies the light type. */
   type: "directional" | "point" | "spot";
   /**
-   * A distance cutoff at which the light's intensity may be considered to have reached zero.
+   * A distance cutoff at which the light's intensity may be considered to have
+   * reached zero.
    */
   range?: number;
 };
 
 export type LightSpot = GlTFProperty & {
-  /**
-   * Angle in radians from centre of spotlight where falloff begins.
-   */
+  /** Angle in radians from centre of spotlight where falloff begins. */
   innerConeAngle?: number;
-  /**
-   * Angle in radians from centre of spotlight where falloff ends.
-   */
+  /** Angle in radians from centre of spotlight where falloff ends. */
   outerConeAngle?: number;
 };
 
 export type Node = GlTFProperty & {
-  /**
-   * The id of the light referenced by this node.
-   */
+  /** The id of the light referenced by this node. */
   light: GlTFId;
 };

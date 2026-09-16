@@ -4,12 +4,8 @@
 //   Node                     node.KHR_node_hoverability.schema.json
 import type { GlTFProperty } from "../specification.js";
 
-/**
- * glTF extension that defines node's hoverability.
- */
+/** GlTF extension that defines node's hoverability. */
 export type Node = GlTFProperty & {
-  /**
-   * Specifies whether the node is hoverable.
-   */
+  /** Specifies whether the node is hoverable. */
   hoverable?: boolean;
 };

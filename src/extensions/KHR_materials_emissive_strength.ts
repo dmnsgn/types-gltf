@@ -4,12 +4,11 @@
 //   Material                 material.KHR_materials_emissive_strength.schema.json
 import type { GlTFProperty } from "../specification.js";
 
-/**
- * glTF extension that adjusts the strength of emissive material properties.
- */
+/** GlTF extension that adjusts the strength of emissive material properties. */
 export type Material = GlTFProperty & {
   /**
-   * The strength adjustment to be multiplied with the material's emissive value.
+   * The strength adjustment to be multiplied with the material's emissive
+   * value.
    */
   emissiveStrength?: number;
 };

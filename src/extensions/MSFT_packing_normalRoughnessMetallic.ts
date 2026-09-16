@@ -5,16 +5,13 @@
 import type { GlTFId, GlTFProperty } from "../specification.js";
 
 /**
- * glTF extension the specifies a packing of normal, roughness and metallic in a single texture.
+ * GlTF extension the specifies a packing of normal, roughness and metallic in a
+ * single texture.
  */
 export type GlTF = GlTFProperty & {
-  /**
-   * A texture with the packing Normal (RG), Roughness (B), Metallic (A).
-   */
+  /** A texture with the packing Normal (RG), Roughness (B), Metallic (A). */
   normalRoughnessMetallicTexture?: {
-    /**
-     * The index of the texture.
-     */
+    /** The index of the texture. */
     index?: GlTFId;
   };
 };

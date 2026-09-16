@@ -7,9 +7,7 @@
 //   SolarPanelGroup          solarPanelGroup.schema.json
 import type { GlTFProperty } from "../specification.js";
 
-/**
- * glTF Extension that defines metadata for use with STK (Systems Tool Kit).
- */
+/** GlTF Extension that defines metadata for use with STK (Systems Tool Kit). */
 export type GlTF = GlTFProperty & {
   /**
    * An array of solar panel groups.
@@ -19,30 +17,30 @@ export type GlTF = GlTFProperty & {
   solarPanelGroups?: SolarPanelGroup[];
 };
 
-/**
- * A solar panel group definition.
- */
+/** A solar panel group definition. */
 export type SolarPanelGroup = GlTFProperty & {
   /**
-   * The name of this solar panel group.  The group name must be unique within this model, and may not contain spaces.
+   * The name of this solar panel group. The group name must be unique within
+   * this model, and may not contain spaces.
    */
   name: string;
   /**
-   * The percentage, from 0.0 to 100.0, of how efficiently the solar cells convert solar to electrical energy.
+   * The percentage, from 0.0 to 100.0, of how efficiently the solar cells
+   * convert solar to electrical energy.
    */
   efficiency: number;
 };
 
 /**
- * glTF Extension for an individual node in a glTF model, to associate it with the model's root AGI_stk_metadata object.
+ * GlTF Extension for an individual node in a glTF model, to associate it with
+ * the model's root AGI_stk_metadata object.
  */
 export type Node = GlTFProperty & {
-  /**
-   * The name of a Solar Panel Group that includes this node.
-   */
+  /** The name of a Solar Panel Group that includes this node. */
   solarPanelGroupName?: string;
   /**
-   * Set to true to indicate that this node's geometry does not obscure any sensors' view in the STK Sensor Obscuration tool.
+   * Set to true to indicate that this node's geometry does not obscure any
+   * sensors' view in the STK Sensor Obscuration tool.
    */
   noObscuration?: boolean;
 };

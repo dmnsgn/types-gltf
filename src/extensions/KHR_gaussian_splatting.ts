@@ -4,24 +4,14 @@
 //   MeshPrimitive            mesh.primitive.KHR_gaussian_splatting.schema.json
 import type { GlTFProperty } from "../specification.js";
 
-/**
- * Data defining a 3D Gaussian Splat primitive.
- */
+/** Data defining a 3D Gaussian Splat primitive. */
 export type MeshPrimitive = GlTFProperty & {
-  /**
-   * The kernel used to generate the Gaussians.
-   */
+  /** The kernel used to generate the Gaussians. */
   kernel: "ellipse" | string;
-  /**
-   * The color space of the reconstructed color values.
-   */
+  /** The color space of the reconstructed color values. */
   colorSpace: "srgb_rec709_display" | "lin_rec709_display";
-  /**
-   * The projection method for rendering the Gaussians.
-   */
+  /** The projection method for rendering the Gaussians. */
   projection?: "perspective" | string;
-  /**
-   * The sorting method for rendering the Gaussians.
-   */
+  /** The sorting method for rendering the Gaussians. */
   sortingMethod?: "cameraDistance" | string;
 };

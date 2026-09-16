@@ -5,46 +5,30 @@
 //   BufferView               bufferView.EXT_meshopt_compression.schema.json
 import type { GlTFId, GlTFProperty } from "../specification.js";
 
-/**
- * Compressed data for bufferView.
- */
+/** Compressed data for bufferView. */
 export type Buffer = GlTFProperty & {
   /**
-   * Set to true to indicate that the buffer is only referenced by bufferViews that have EXT_meshopt_compression extension and as such doesn't need to be loaded.
+   * Set to true to indicate that the buffer is only referenced by bufferViews
+   * that have EXT_meshopt_compression extension and as such doesn't need to be
+   * loaded.
    */
   fallback?: boolean;
 };
 
-/**
- * Compressed data for bufferView.
- */
+/** Compressed data for bufferView. */
 export type BufferView = GlTFProperty & {
-  /**
-   * The index of the buffer with compressed data.
-   */
+  /** The index of the buffer with compressed data. */
   buffer: GlTFId;
-  /**
-   * The offset into the buffer in bytes.
-   */
+  /** The offset into the buffer in bytes. */
   byteOffset?: number;
-  /**
-   * The length of the compressed data in bytes.
-   */
+  /** The length of the compressed data in bytes. */
   byteLength: number;
-  /**
-   * The stride, in bytes.
-   */
+  /** The stride, in bytes. */
   byteStride: number;
-  /**
-   * The number of elements.
-   */
+  /** The number of elements. */
   count: number;
-  /**
-   * The compression mode.
-   */
+  /** The compression mode. */
   mode: "ATTRIBUTES" | "TRIANGLES" | "INDICES";
-  /**
-   * The compression filter.
-   */
+  /** The compression filter. */
   filter?: "NONE" | "OCTAHEDRAL" | "QUATERNION" | "EXPONENTIAL";
 };

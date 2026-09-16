@@ -8,28 +8,16 @@ import type {
   TextureInfo,
 } from "../specification.js";
 
-/**
- * glTF extension that defines the clearcoat material layer.
- */
+/** GlTF extension that defines the clearcoat material layer. */
 export type Material = GlTFProperty & {
-  /**
-   * The clearcoat layer intensity.
-   */
+  /** The clearcoat layer intensity. */
   clearcoatFactor?: number;
-  /**
-   * The clearcoat layer intensity texture.
-   */
+  /** The clearcoat layer intensity texture. */
   clearcoatTexture?: TextureInfo;
-  /**
-   * The clearcoat layer roughness.
-   */
+  /** The clearcoat layer roughness. */
   clearcoatRoughnessFactor?: number;
-  /**
-   * The clearcoat layer roughness texture.
-   */
+  /** The clearcoat layer roughness texture. */
   clearcoatRoughnessTexture?: TextureInfo;
-  /**
-   * The clearcoat normal map texture.
-   */
+  /** The clearcoat normal map texture. */
   clearcoatNormalTexture?: MaterialNormalTextureInfo;
 };

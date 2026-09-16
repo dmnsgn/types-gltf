@@ -8,12 +8,11 @@
 //   Node                     node.AGI_articulations.schema.json
 import type { GlTFProperty } from "../specification.js";
 
-/**
- * A model articulation definition.
- */
+/** A model articulation definition. */
 export type Articulation = GlTFProperty & {
   /**
-   * The name of this articulation.  The articulation name must be unique within this model.  Articulation names may not contain spaces.
+   * The name of this articulation. The articulation name must be unique within
+   * this model. Articulation names may not contain spaces.
    */
   name: string;
   /**
@@ -23,7 +22,8 @@ export type Articulation = GlTFProperty & {
    */
   stages: ArticulationStage[];
   /**
-   * The local forward vector for the associated node, for the purpose of pointing at a target or other object.
+   * The local forward vector for the associated node, for the purpose of
+   * pointing at a target or other object.
    *
    * @minItems 3
    * @maxItems 3
@@ -31,17 +31,15 @@ export type Articulation = GlTFProperty & {
   pointingVector?: [number, number, number];
 };
 
-/**
- * One stage of a model articulation definition.
- */
+/** One stage of a model articulation definition. */
 export type ArticulationStage = GlTFProperty & {
   /**
-   * The name of this articulation stage.  The articulation stage name must be unique only within the containing articulation.  Articulation Stage names may not contain spaces.
+   * The name of this articulation stage. The articulation stage name must be
+   * unique only within the containing articulation. Articulation Stage names
+   * may not contain spaces.
    */
   name: string;
-  /**
-   * The type of motion applied by this articulation stage.
-   */
+  /** The type of motion applied by this articulation stage. */
   type:
     | "xTranslate"
     | "yTranslate"
@@ -54,22 +52,17 @@ export type ArticulationStage = GlTFProperty & {
     | "zScale"
     | "uniformScale"
     | string;
-  /**
-   * The minimum value for the range of motion of this articulation stage.
-   */
+  /** The minimum value for the range of motion of this articulation stage. */
   minimumValue: number;
-  /**
-   * The maximum value for the range of motion of this articulation stage.
-   */
+  /** The maximum value for the range of motion of this articulation stage. */
   maximumValue: number;
-  /**
-   * The initial value for this articulation stage.
-   */
+  /** The initial value for this articulation stage. */
   initialValue: number;
 };
 
 /**
- * glTF Extension that defines metadata for applying external analysis or effects to a model.
+ * GlTF Extension that defines metadata for applying external analysis or
+ * effects to a model.
  */
 export type GlTF = GlTFProperty & {
   /**
@@ -81,15 +74,15 @@ export type GlTF = GlTFProperty & {
 };
 
 /**
- * glTF Extension for an individual node in a glTF model, to associate it with the model's root AGI_articulations object.
+ * GlTF Extension for an individual node in a glTF model, to associate it with
+ * the model's root AGI_articulations object.
  */
 export type Node = GlTFProperty & {
   /**
-   * Set to true to indicate that this node's origin and orientation act as an attach point for external objects, analysis, or effects.
+   * Set to true to indicate that this node's origin and orientation act as an
+   * attach point for external objects, analysis, or effects.
    */
   isAttachPoint?: boolean;
-  /**
-   * The name of an Articulation that applies to this node.
-   */
+  /** The name of an Articulation that applies to this node. */
   articulationName?: string;
 };

@@ -4,17 +4,17 @@
 //   Mesh                     mesh.EXT_mesh_manifold.schema.json
 import type { GlTFId, GlTFProperty, MeshPrimitive } from "../specification.js";
 
-/**
- * glTF extension defines manifoldness for a mesh.
- */
+/** GlTF extension defines manifoldness for a mesh. */
 export type Mesh = GlTFProperty & {
   manifoldPrimitive: MeshPrimitive;
   /**
-   * The index of the accessor that contains the vertex sparse indices for merging into a manifold.
+   * The index of the accessor that contains the vertex sparse indices for
+   * merging into a manifold.
    */
   mergeIndices?: GlTFId;
   /**
-   * The index of the accessor that contains the vertex sparse values for merging into a manifold.
+   * The index of the accessor that contains the vertex sparse values for
+   * merging into a manifold.
    */
   mergeValues?: GlTFId;
 };

@@ -5,24 +5,20 @@
 //   Material                 material.KHR_materials_volume.schema.json
 import type { GlTFProperty, TextureInfo } from "../specification.js";
 
-/**
- * glTF extension that defines the parameters for the volume of a material.
- */
+/** GlTF extension that defines the parameters for the volume of a material. */
 export type Material = GlTFProperty & {
-  /**
-   * Thickness of the volume.
-   */
+  /** Thickness of the volume. */
   thicknessFactor?: number;
-  /**
-   * Texture that defines the thickness of the volume, stored in the G channel.
-   */
+  /** Texture that defines the thickness of the volume, stored in the G channel. */
   thicknessTexture?: TextureInfo;
   /**
-   * Average distance that light travels in the medium before interacting with a particle.
+   * Average distance that light travels in the medium before interacting with a
+   * particle.
    */
   attenuationDistance?: number;
   /**
-   * Color that white light turns into due to absorption when reaching the attenuation distance.
+   * Color that white light turns into due to absorption when reaching the
+   * attenuation distance.
    *
    * @minItems 3
    * @maxItems 3

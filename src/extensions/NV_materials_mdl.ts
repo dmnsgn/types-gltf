@@ -15,20 +15,18 @@ import type {
   GlTFProperty,
 } from "../specification.js";
 
-/**
- * A BSDF measurement (MBSDF) as defined in the MDL Language Specification.
- */
+/** A BSDF measurement (MBSDF) as defined in the MDL Language Specification. */
 export type BsdfMeasurement = GlTFChildOfRootProperty & {
-  /**
-   * The URI (or IRI) of the MBSDF.
-   */
+  /** The URI (or IRI) of the MBSDF. */
   uri?: string;
   /**
-   * The ID of the bufferView containing the MBSDF.  This field **MUST NOT** be defined if `uri` is defined.
+   * The ID of the bufferView containing the MBSDF. This field **MUST NOT** be
+   * defined if `uri` is defined.
    */
   bufferView?: GlTFId;
   /**
-   * The BSDF measurement's media type.  This field **MUST** be defined when `bufferView` is defined.
+   * The BSDF measurement's media type. This field **MUST** be defined when
+   * `bufferView` is defined.
    */
   mimeType?: "application/vnd.mdl-mbsdf" | string;
 } & {
@@ -36,23 +34,25 @@ export type BsdfMeasurement = GlTFChildOfRootProperty & {
 };
 
 /**
- * Named function call argument. Can be another function call or a constant value.
+ * Named function call argument. Can be another function call or a constant
+ * value.
  */
 export type FunctionCallArgument = GlTFProperty & {
-  /**
-   * The name of the named argument.
-   */
+  /** The name of the named argument. */
   name?: string;
   /**
-   * The type of the value argument.  This field **MUST** be defined if `value` is defined and **MUST NOT** be defined if `functionCall` is defined.
+   * The type of the value argument. This field **MUST** be defined if `value`
+   * is defined and **MUST NOT** be defined if `functionCall` is defined.
    */
   type?: FunctionCallType;
   /**
-   * The ID of a function call.  This field **MUST NOT** be defined if `value` is defined.
+   * The ID of a function call. This field **MUST NOT** be defined if `value` is
+   * defined.
    */
   functionCall?: GlTFId;
   /**
-   * The literal value of the value argument.  This field **MUST NOT** be defined if `functionCall` is defined.
+   * The literal value of the value argument. This field **MUST NOT** be defined
+   * if `functionCall` is defined.
    */
   value?:
     | boolean
@@ -324,54 +324,50 @@ export type FunctionCallArgument = GlTFProperty & {
 };
 
 /**
- * MDL type describing either a built-in or user-defined type, or an array of a built-in or user-defined type.
+ * MDL type describing either a built-in or user-defined type, or an array of a
+ * built-in or user-defined type.
  */
 export type FunctionCallType = GlTFProperty & {
   /**
-   * The ID of the containing module.  This field **MUST NOT** be defined if a built-in type is specified.
+   * The ID of the containing module. This field **MUST NOT** be defined if a
+   * built-in type is specified.
    */
   module?: GlTFId;
-  /**
-   * The unqualified name of the type.
-   */
+  /** The unqualified name of the type. */
   typeName: string;
   /**
-   * The array size. If this field is defined the type is considered to be a array.
+   * The array size. If this field is defined the type is considered to be a
+   * array.
    */
   arraySize?: number;
-  /**
-   * The name of the type modifier.
-   */
+  /** The name of the type modifier. */
   modifier?: "varying" | "uniform";
 };
 
 /**
- * Function call with its list of arguments. Can represent the entry point into a function call graph or be a node in such a graph.
+ * Function call with its list of arguments. Can represent the entry point into
+ * a function call graph or be a node in such a graph.
  */
 export type FunctionCall = GlTFChildOfRootProperty & {
   /**
-   * The ID of the containing module.  This field **MUST NOT** be defined if a built-in function is specified.
+   * The ID of the containing module. This field **MUST NOT** be defined if a
+   * built-in function is specified.
    */
   module?: GlTFId;
-  /**
-   * The unqualified name of the function.
-   */
+  /** The unqualified name of the function. */
   functionName: string;
-  /**
-   * The return type of the function.
-   */
+  /** The return type of the function. */
   type: FunctionCallType;
   /**
-   * A list of named value and/or function call arguments.  Multiple arguments with the same name **MUST NOT** exist.
+   * A list of named value and/or function call arguments. Multiple arguments
+   * with the same name **MUST NOT** exist.
    *
    * @minItems 1
    */
   arguments?: FunctionCallArgument[];
 };
 
-/**
- * glTF extension that enables using MDL materials.
- */
+/** GlTF extension that enables using MDL materials. */
 export type GlTF = GlTFProperty & {
   /**
    * The list of all MDL modules.
@@ -393,24 +389,24 @@ export type GlTF = GlTFProperty & {
   bsdfMeasurements?: BsdfMeasurement[];
 };
 
-/**
- * An MDL module.
- */
+/** An MDL module. */
 export type Module = GlTFChildOfRootProperty & {
-  /**
-   * The URI (or IRI) of the MDL module.
-   */
+  /** The URI (or IRI) of the MDL module. */
   uri?: string;
   /**
-   * The ID of the bufferView containing the MDL module.  This field **MUST NOT** be defined if `uri` is defined.
+   * The ID of the bufferView containing the MDL module. This field **MUST NOT**
+   * be defined if `uri` is defined.
    */
   bufferView?: GlTFId;
   /**
-   * The MDL module's media type.  This field **MUST** be defined when `bufferView` is defined.
+   * The MDL module's media type. This field **MUST** be defined when
+   * `bufferView` is defined.
    */
   mimeType?: "application/vnd.mdl" | string;
   /**
-   * Relative path of the module.  This field **MUST** be defined if `bufferView` is defined or `uri` is defined and contains a data-URI, otherwise this field **MUST NOT** be defined.
+   * Relative path of the module. This field **MUST** be defined if `bufferView`
+   * is defined or `uri` is defined and contains a data-URI, otherwise this
+   * field **MUST NOT** be defined.
    */
   modulePath?: string;
 } & (
@@ -421,30 +417,32 @@ export type Module = GlTFChildOfRootProperty & {
         [k: string]: unknown;
       }
   ) & {
-    /**
-     * The URI (or IRI) of the MDL module.
-     */
+    /** The URI (or IRI) of the MDL module. */
     uri?: string;
     /**
-     * The ID of the bufferView containing the MDL module.  This field **MUST NOT** be defined if `uri` is defined.
+     * The ID of the bufferView containing the MDL module. This field **MUST
+     * NOT** be defined if `uri` is defined.
      */
     bufferView?: GlTFId;
     /**
-     * The MDL module's media type.  This field **MUST** be defined when `bufferView` is defined.
+     * The MDL module's media type. This field **MUST** be defined when
+     * `bufferView` is defined.
      */
     mimeType?: "application/vnd.mdl" | string;
     /**
-     * Relative path of the module.  This field **MUST** be defined if `bufferView` is defined or `uri` is defined and contains a data-URI, otherwise this field **MUST NOT** be defined.
+     * Relative path of the module. This field **MUST** be defined if
+     * `bufferView` is defined or `uri` is defined and contains a data-URI,
+     * otherwise this field **MUST NOT** be defined.
      */
     modulePath?: string;
   };
 
-/**
- * glTF extension that enables using MDL materials.
- */
+/** GlTF extension that enables using MDL materials. */
 export type Material = GlTFProperty & {
   /**
-   * The index of the MDL function call. The reference function call **MUST** represent the entry point to a function call graph and have the return type `material`.
+   * The index of the MDL function call. The reference function call **MUST**
+   * represent the entry point to a function call graph and have the return type
+   * `material`.
    */
   functionCall: GlTFId;
 };

@@ -5,12 +5,11 @@
 import type { GlTFId, GlTFProperty } from "../specification.js";
 
 export type MeshPrimitive = GlTFProperty & {
-  /**
-   * The index of the bufferView.
-   */
+  /** The index of the bufferView. */
   bufferView: GlTFId;
   /**
-   * A dictionary object, where each key corresponds to an attribute and its unique attribute id stored in the compressed geometry.
+   * A dictionary object, where each key corresponds to an attribute and its
+   * unique attribute id stored in the compressed geometry.
    */
   attributes: {
     [k: string]: GlTFId;
